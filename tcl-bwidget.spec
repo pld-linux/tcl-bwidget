@@ -1,12 +1,14 @@
 
 %define		tcl_version		%(rpm -q --qf %{V} tcl-devel | cut -d. -f1,2)
-%define		tcl_sitelib		%{_datadir}/tcl%{tcl_version}
+# TODO: pld tcl doesn't use %{_datadir}
+#%%define		tcl_sitelib		%{_datadir}/tcl%{tcl_version}
+%define		tcl_sitelib		%{_libdir}/tcl%{tcl_version}
 
 %define		package	bwidget
 Summary:	Extended widget set for Tk
 Name:		tcl-%{package}
 Version:	1.8.0
-Release:	0.1
+Release:	0.2
 License:	TCL
 Group:		Development/Libraries
 URL:		http://tcllib.sourceforge.net/
