@@ -1,17 +1,14 @@
-
-%define		tcl_version		%(rpm -q --qf %{V} tcl-devel | cut -d. -f1,2)
-%define		tcl_sitelib		%{_datadir}/tcl%{tcl_version}
-
 %define		package	bwidget
 Summary:	Extended widget set for Tk
 Name:		tcl-%{package}
 Version:	1.8.0
-Release:	0.3
+Release:	1
 License:	TCL
 Group:		Development/Libraries
 URL:		http://tcllib.sourceforge.net/
 Source0:	http://dl.sourceforge.net/tcllib/BWidget-%{version}.tar.bz2
 # Source0-md5:	5d2433c5fd93ab7f906f4c7ab225b0d8
+BuildRequires:	rpmbuild(macros) >= 1.517
 BuildRequires:	tcl >= 8.4
 Requires:	tcl >= %{tcl_version}
 Requires:	tk
