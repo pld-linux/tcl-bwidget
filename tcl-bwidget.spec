@@ -1,3 +1,7 @@
+
+%define		tcl_version		%(rpm -q --qf %{V} tcl-devel | cut -d. -f1,2)
+%define		tcl_sitelib		%{_datadir}/tcl%{tcl_version}
+
 %define		package	bwidget
 Summary:	Extended widget set for Tk
 Name:		tcl-%{package}
@@ -13,9 +17,6 @@ Requires:	tcl >= %{tcl_version}
 Requires:	tk
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		tcl_version		%(rpm -q --qf %{V} tcl-devel | cut -d. -f1,2)
-%define		tcl_sitelib		%{_datadir}/tcl%{tcl_version}
 
 %description
 An extended widget set for Tcl/Tk.
